@@ -23,10 +23,6 @@ public class PlayerController : MonoBehaviour
             // Establecer el primer destino
             MoveToNextPosition();
         }
-        else
-        {
-            Debug.LogWarning("No se han asignado posiciones destino en el array.");
-        }
     }
 
     void Update()

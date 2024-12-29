@@ -5,7 +5,6 @@ public class Seek : MonoBehaviour
 {
     private NavMeshAgent agent;
     public Transform DestPositions; // Array de posiciones destino
-    private int currentTargetIndex = 0; // Índice del destino actual
 
     void Start()
     {
