@@ -32,7 +32,7 @@ public class ZombiManager : MonoBehaviour
             NavMeshHit hit;
             if (NavMesh.SamplePosition(randomDirection, out hit, 20, NavMesh.AllAreas))
             {
-                allZombis[i] = Instantiate(zombiPrefab, hit.position, Quaternion.identity);
+                allZombis[i] = Instantiate(zombiPrefab, hit.position + transform.position, Quaternion.identity);
                 allZombis[i].transform.SetParent(transform);
             }
 
@@ -62,11 +62,11 @@ public class ZombiManager : MonoBehaviour
 
     public void AlertZombis()
     {
-        BroadcastMessage("OnPlayerDetected", SendMessageOptions.DontRequireReceiver); // Notificar a otros zombis
+        BroadcastMessage("ZombieScream", SendMessageOptions.DontRequireReceiver); // Notificar a otros zombis
     }
 
     public void StopZombis()
     {
-        BroadcastMessage("OnPlayerLost", SendMessageOptions.DontRequireReceiver); // Notificar que se ha perdido de vista
+        BroadcastMessage("BlindZombie", SendMessageOptions.DontRequireReceiver); // Notificar que se ha perdido de vista
     }
 }

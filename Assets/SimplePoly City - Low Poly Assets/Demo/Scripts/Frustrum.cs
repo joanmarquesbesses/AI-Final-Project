@@ -36,7 +36,7 @@ public class Frustrum : MonoBehaviour
                 {
                     if (hit.collider.gameObject.CompareTag("NPC"))
                     {
-                //        ZombiManager.zManager.AlertZombis();
+                        ZombiManager.zManager.AlertZombis();
                         agent.SetDestination(hit.transform.position);
                         playerDetected = true;
                         watchingyou = true;
@@ -48,7 +48,10 @@ public class Frustrum : MonoBehaviour
 
         if (playerDetected == true)
         {
-            agent.SetDestination(objective.transform.position);
+            if (objective != null)
+            {
+                agent.SetDestination(objective.transform.position);
+            }
         }
 
 
