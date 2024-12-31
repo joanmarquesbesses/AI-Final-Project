@@ -35,7 +35,7 @@ public class ZombiManager : MonoBehaviour
                 allZombis[i] = Instantiate(zombiPrefab, hit.position, Quaternion.identity);
                 allZombis[i].transform.SetParent(transform);
             }
-           
+
         }
 
         zManager = this;
@@ -47,7 +47,7 @@ public class ZombiManager : MonoBehaviour
         bool playerSeen = false;
         for (int i = 0; i < numZombis; i++)
         {
-            if (allZombis[i].GetComponent<ZombieIA>().playerInSight)
+            if (allZombis[i].GetComponent<Frustrum>().watchingyou)
             {
                 playerSeen = true;
                 break;
