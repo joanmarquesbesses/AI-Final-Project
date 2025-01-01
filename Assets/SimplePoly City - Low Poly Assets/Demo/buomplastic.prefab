@@ -175,9 +175,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2808192594280199045}
   - component: {fileID: 2014758509821377636}
-  - component: {fileID: 3301507730645061003}
+  - component: {fileID: 8291231555786064029}
   m_Layer: 0
-  m_Name: lider1
+  m_Name: buomplastic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,7 +223,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3301507730645061003
+--- !u!114 &8291231555786064029
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,18 +232,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 803136770484036104}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3140f93dc23691a43a95779edb6004cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 50dc1c9eaf4feae4c81885a823e0c136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishPrefab: {fileID: 803136770484036104, guid: 59c4a7ebcfbdf794aafc0d40a85339fd, type: 3}
-  numFish: 20
-  allFish: []
-  swimLimits: {x: 5, y: 5, z: 5}
-  goalPos: {x: 0, y: 0, z: 0}
-  minSpeed: 3
-  maxSpeed: 5
-  neighbourDistance: 3
-  rotationSpeed: 2.5
 --- !u!1 &1971550525499044744
 GameObject:
   m_ObjectHideFlags: 0
