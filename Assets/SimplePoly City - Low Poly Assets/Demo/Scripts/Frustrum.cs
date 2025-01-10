@@ -104,6 +104,7 @@ public class Frustrum : MonoBehaviour
                         ZombiManager.zManager.SetObjective(hit.transform);
                         ZombiManager.zManager.AlertZombis();
                         watchingyou = true;
+                        hit.collider.gameObject.GetComponent<Evade>().zombi = this.transform;
                     }
                 }
             }
