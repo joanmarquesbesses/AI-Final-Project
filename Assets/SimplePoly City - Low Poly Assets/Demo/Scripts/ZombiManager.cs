@@ -19,12 +19,13 @@ public class ZombiManager : MonoBehaviour
 
     public int neighbourDistance = 2;
 
+    public Transform target;
+
     void Start()
     {
         // Initialize the array to hold all the zombis
         allZombis = new GameObject[numZombis];
 
-        // Loop to create and place each fish randomly within the swim limits
         for (int i = 0; i < numZombis; i++)
         {
             Vector3 randomDirection = Random.insideUnitSphere * 20;
@@ -68,5 +69,15 @@ public class ZombiManager : MonoBehaviour
     public void StopZombis()
     {
         BroadcastMessage("BlindZombie", SendMessageOptions.DontRequireReceiver); // Notificar que se ha perdido de vista
+    }
+
+    public void SetObjective(Transform transform)
+    {
+        target = transform;
+    }
+
+    public Transform GetObjective()
+    {
+        return target;
     }
 }
