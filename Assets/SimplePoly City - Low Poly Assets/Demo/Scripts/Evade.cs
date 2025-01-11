@@ -12,6 +12,7 @@ public class Evade : MonoBehaviour
     private float timer = 0;
     public Transform zombi = null;
     public bool evade = false;
+    private Animator animator;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -20,6 +21,8 @@ public class Evade : MonoBehaviour
         agent.obstacleAvoidanceType = ObstacleAvoidanceType.HighQualityObstacleAvoidance;
         wanderTimer = Random.Range(2, 4);
         wanderRadius = Random.Range(10, 20);
+        animator = GetComponent<Animator>();
+        animator.Play("idle");
     }
 
     // Update is called once per frame
@@ -28,8 +31,8 @@ public class Evade : MonoBehaviour
         if(zombi != null)
         {
             Vector3 direction = (zombi.position - transform.position).normalized *-1;
-            Debug.Log(direction);
             agent.SetDestination(transform.position + (direction * 10));
+            animator.Play("run");
             agent.speed = 4;
             zombi = null;
         }
@@ -40,6 +43,7 @@ public class Evade : MonoBehaviour
             if (timer >= wanderTimer)
             {
                 Vector3 newPos = RandomNavMeshLocation(wanderRadius);
+                animator.Play("walk");
                 agent.SetDestination(newPos);
                 timer = 0;
                 wanderTimer = Random.Range(2, 4);
